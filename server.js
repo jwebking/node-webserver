@@ -1,6 +1,8 @@
 var express = require('express');
 var hbs = require('hbs');
 var fs = require('fs');
+
+var port = process.env.PORT || 3000;
 var app = express();
 
 hbs.registerPartials(__dirname + '/views/partials');
@@ -52,6 +54,6 @@ app.get('/bad', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log("Server is good to go!");
+app.listen(port, () => {
+    console.log(`Server on ${port} is good to go!`);
 });
